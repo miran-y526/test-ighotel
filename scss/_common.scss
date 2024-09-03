@@ -1,0 +1,838 @@
+/*************** common 共通クラス ***************/
+$devise_pc_min_width: 1024px;
+$devise_tb_max_width: 1023px;
+$devise_tb_min_width: 768px;
+$devise_sp_max_width: 767px;
+$devise_ssp_max_width: 320px;
+
+@media (max-width: $devise_tb_max_width) {
+  .pc-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (min-width: $devise_pc_min_width) {
+  .tb-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (max-width: $devise_sp_max_width) {
+  .tb-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (max-width: $devise_sp_max_width) {
+  .pc-tb-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (min-width: $devise_pc_min_width) {
+  .tb-sp-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (min-width: $devise_tb_min_width) {
+  .sp-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (min-width: 321px) {
+  .ssp-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+
+@function vw($pixel) {
+  @return (($pixel/375) * 100) + vw;
+}
+
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  color: #333333;
+  font-size: 13px;
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo,
+    メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif;
+  letter-spacing: 0.025em;
+  line-height: 21px;
+  margin: 0 auto;
+  max-width: 2000px;
+  @media (max-width: $devise_sp_max_width) {
+    font-size: vw(12);
+    width: 100%;
+  }
+}
+
+a {
+  color: inherit;
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo,
+    メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif;
+  text-decoration: inherit;
+}
+
+@font-face {
+  font-family: "mamelon";
+  src: url("https://maltamalta.com/assets/font/mamelon.woff") format("woff");
+}
+
+img {
+  width: 100%;
+}
+
+///// h2 各タイトル /////
+.category-main-title {
+  color: #1db3ce;
+  font-family: "mamelon", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3";
+  font-size: 30px;
+  left: 0;
+  letter-spacing: 0.1em;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 40%;
+  > h2 {
+    font-size: 14px;
+    letter-spacing: 0.025em;
+    margin-top: 5px;
+  }
+  &.top-school {
+    top: 75%;
+  }
+  &.school {
+    top: 25%;
+  }
+  &.flow {
+    color: #fff;
+    top: 0;
+  }
+  &.contact {
+    color: #ffffff;
+    top: 7%;
+  }
+  &.simulation {
+    top: -200%;
+  }
+  &.community {
+    top: 76%;
+  }
+}
+
+/////// serect area ///////
+
+.select-page-area {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 864px;
+  position: relative;
+  width: 100%;
+  &:hover {
+    .txt-box-area {
+      display: block;
+    }
+  }
+  @media (max-width: $devise_sp_max_width) {
+    display: none;
+  }
+  .select-box-area {
+    margin-right: 2%;
+    transition: 0.5s;
+    width: 20%;
+    &:nth-of-type(5) {
+      margin-right: 0;
+    }
+    &:hover {
+      opacity: 0.6;
+      .txt-box-area {
+        display: block;
+        transition: 0.5s;
+      }
+    }
+    .select-box {
+      box-sizing: border-box;
+      cursor: pointer;
+      position: relative;
+      .select-img {
+        height: 110px;
+        margin: 0 auto;
+        position: relative;
+        width: 120px;
+        img {
+          width: 100%;
+        }
+        > a {
+          height: 100%;
+          position: absolute;
+          width: 100%;
+        }
+        &.school {
+          width: 73px;
+          @media (max-width: $devise_tb_max_width) {
+            width: 61px;
+          }
+        }
+        &.flow {
+          top: -25px;
+          width: 125px;
+          @media (max-width: $devise_tb_max_width) {
+            width: 138px;
+          }
+        }
+        &.about {
+          width: 140px;
+          @media (max-width: $devise_tb_max_width) {
+            width: 146px;
+          }
+        }
+      }
+      .select-menu-title {
+        bottom: 5%;
+        color: #1db3ce;
+        font-size: 14px;
+        font-family: "mamelon", "Hiragino Kaku Gothic ProN",
+          "ヒラギノ角ゴ ProN W3";
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        position: absolute;
+        text-align: center;
+        width: 160px;
+        > .select-menu-en-title {
+          font-size: 13px;
+        }
+      }
+    }
+    .txt-box-area {
+      box-sizing: border-box;
+      display: none;
+      padding-top: 5px;
+      position: absolute;
+      width: 160px;
+      z-index: 100;
+      @media (max-width: $devise_tb_max_width) {
+        width: 148px;
+      }
+      a {
+        border: 1px solid #1db3ce;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #1db3ce;
+        cursor: pointer;
+        display: block;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        line-height: 21px;
+        text-align: center;
+        @media (max-width: $devise_sp_max_width) {
+          font-size: vw(12);
+        }
+        &:hover {
+          background-color: #1db3ce;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+/////// ボタン（青）　///////
+.form-main-area-blue {
+  position: relative;
+  background-color: #1db3ce;
+  border-radius: 33px;
+  cursor: pointer;
+  display: flex;
+  height: 45px;
+  margin: 0 auto;
+  width: 270px;
+  @media (max-width: $devise_sp_max_width) {
+    border-radius: vw(33);
+    height: vw(45);
+    width: vw(270);
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &.blog {
+    margin-bottom: 100px;
+  }
+  .form-area {
+    &.ryuugaku {
+      @media (max-width: $devise_sp_max_width) {
+        bottom: vw(56);
+      }
+    }
+    @media (max-width: $devise_sp_max_width) {
+      bottom: vw(-40);
+    }
+    &.blog {
+      bottom: -100px;
+      @media (max-width: $devise_sp_max_width) {
+        bottom: vw(-70);
+      }
+    }
+    &.newspage {
+      @media (max-width: $devise_sp_max_width) {
+        bottom: vw(50);
+      }
+    }
+    &.monitor {
+      bottom: 100px;
+      @media (max-width: $devise_sp_max_width) {
+        bottom: vw(100);
+      }
+    }
+    .btn-txt {
+      height: 15px;
+      position: absolute;
+      width: 133px;
+      left: 97px;
+      top: 14px;
+      @media (max-width: $devise_sp_max_width) {
+        height: vw(15);
+        left: vw(97);
+        width: vw(133);
+        top: vw(14);
+      }
+      &.community {
+        width: 172px;
+        left: 50px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(50);
+          width: vw(172);
+        }
+      }
+      &.school {
+        left: 68px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(68);
+        }
+      }
+      &.ryuugaku {
+        left: 33px;
+        width: 190px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(33);
+          width: vw(190);
+        }
+      }
+      &.blog {
+        left: 90px;
+        width: 94px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(90);
+          width: vw(94);
+        }
+      }
+      &.ryugakutop {
+        left: 45px;
+        width: 175px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(42);
+          width: vw(185);
+        }
+      }
+      &.newspage {
+        left: 85px;
+        width: 115px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(80);
+          width: vw(115);
+        }
+      }
+      &.monitor {
+        height: 15px;
+        left: 78px;
+        width: 112px;
+        @media (max-width: $devise_sp_max_width) {
+          height: vw(15);
+          left: vw(78);
+          width: vw(112);
+        }
+      }
+    }
+    .btn-fish {
+      bottom: 9px;
+      height: 27px;
+      position: absolute;
+      right: 8px;
+      width: 22px;
+      @media (max-width: $devise_sp_max_width) {
+        bottom: vw(9);
+        height: vw(27);
+        right: vw(8);
+        width: vw(22);
+      }
+    }
+  }
+}
+
+/////// ボタン（白）　///////
+.form-main-area-white {
+  position: relative;
+  background-color: #ffffff;
+  border: 3px solid #1db3ce;
+  border-radius: 33px;
+  cursor: pointer;
+  display: flex;
+  height: 45px;
+  margin: 0 auto;
+  width: 270px;
+  @media (max-width: $devise_sp_max_width) {
+    border-radius: vw(33);
+    height: vw(45);
+    width: vw(270);
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  .form-area {
+    .btn-txt {
+      height: 15px;
+      position: absolute;
+      width: 92px;
+      left: 97px;
+      top: 14px;
+      @media (max-width: $devise_sp_max_width) {
+        height: vw(15);
+        left: vw(100);
+        width: vw(92);
+        top: vw(14);
+      }
+      &.news {
+        left: 79px;
+        width: 112px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(79);
+          width: vw(112);
+        }
+      }
+      &.flow {
+        left: 62px;
+        width: 152px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(62);
+          width: vw(152);
+        }
+      }
+      &.mail {
+        left: 17px;
+        width: 208px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(17);
+          width: vw(208);
+        }
+      }
+      &.simulation {
+        left: 30px;
+        width: 200px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(30);
+          width: vw(190);
+        }
+      }
+      &.introduction {
+        left: 68px;
+        width: 133px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(68);
+          width: vw(133);
+        }
+      }
+      &.inquiry {
+        left: 69px;
+        width: 132px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(69);
+          width: vw(132);
+        }
+      }
+      &.application {
+        left: 63px;
+        width: 151px;
+        @media (max-width: $devise_sp_max_width) {
+          left: vw(63);
+          width: vw(151);
+        }
+      }
+    }
+    .btn-fish {
+      bottom: 9px;
+      height: 27px;
+      position: absolute;
+      right: 8px;
+      width: 22px;
+      @media (max-width: $devise_sp_max_width) {
+        bottom: vw(9);
+        height: vw(27);
+        right: vw(8);
+        width: vw(22);
+      }
+    }
+  }
+}
+
+/*
+ * ボタン 白（文字打ちver）
+ */
+.prev-btn-white {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  position: relative;
+  width: 270px;
+  @media (max-width: $devise_sp_max_width) {
+    margin-bottom: 0;
+    width: 70%;
+  }
+  > a {
+    display: block;
+    transition: 0.5s;
+    text-align: center;
+    > p {
+      bottom: 0;
+      color: #1db3ce;
+      content: "";
+      font-family: "mamelon", "Hiragino Kaku Gothic ProN",
+        "ヒラギノ角ゴ ProN W3";
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      top: 28%;
+      @media (max-width: $devise_sp_max_width) {
+        font-size: vw(14);
+      }
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/*
+ * ボタン 青（文字打ちver）
+ */
+.prev-btn-blue {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  position: relative;
+  width: 270px;
+  @media (max-width: $devise_sp_max_width) {
+    width: 70%;
+  }
+  > a {
+    display: block;
+    transition: 0.5s;
+    text-align: center;
+    > p {
+      bottom: 0;
+      color: #ffffff;
+      content: "";
+      font-family: "mamelon", "Hiragino Kaku Gothic ProN",
+        "ヒラギノ角ゴ ProN W3";
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      top: 28%;
+      @media (max-width: $devise_sp_max_width) {
+        font-size: vw(14);
+      }
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/*
+ * 見出し文のcss
+ */
+.community-title-detail,
+.news-title-detail,
+.school-title-detail,
+.simulation-title-detail,
+.blog-main-title-detail,
+.study-abroad-title-detail,
+.plaza-blog-title-detail,
+.experience-title-detail {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  max-width: 864px;
+  text-align: center;
+  @media (max-width: $devise_sp_max_width) {
+    box-sizing: border-box;
+    margin-bottom: vw(30);
+    max-width: 100%;
+    padding: 0 vw(20);
+    text-align: left;
+  }
+}
+.blog-main-title-detail,
+.study-abroad-title-detail,
+.plaza-blog-title-detail,
+.experience-title-detail {
+  @media (max-width: $devise_sp_max_width) {
+    padding: 0 vw(10);
+  }
+}
+
+.flow-title-detail {
+  color: #ffffff;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  max-width: 864px;
+  text-align: center;
+  @media (max-width: $devise_sp_max_width) {
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: 0 vw(20);
+    text-align: left;
+  }
+}
+
+//プラグイン simple author box　に関する設定
+.saboxplugin-authorname a {
+  pointer-events: none;
+  color: #333333;
+}
+
+.saboxplugin-wrap .saboxplugin-gravatar {
+  padding: 30px;
+}
+
+.saboxplugin-wrap .saboxplugin-authorname {
+  margin: 20px 0;
+  text-align: initial;
+}
+
+.saboxplugin-wrap .saboxplugin-desc p {
+  margin: 5px 0 !important;
+}
+
+//プラグイン Table of Contents Plusに関する設定
+#toc_container {
+  background: #ffffff !important;
+  border: 2px solid #1db3ce !important;
+  border-radius: 15px !important;
+  box-sizing: border-box;
+  margin: 50px 0 !important;
+  padding: 10px;
+  width: auto;
+  display: table;
+  > .toc_list {
+    > ul {
+      border: none;
+      > li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+.column-wrapper .column-content a {
+  color: #333333;
+  &:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+}
+.column-wrapper .column-content img {
+  height: auto;
+  width: 100%;
+}
+
+#toc_container.no_bullets li,
+#toc_container.no_bullets ul,
+#toc_container.no_bullets ul li,
+.toc_widget_list.no_bullets,
+.toc_widget_list.no_bullets li {
+  margin-bottom: 5px;
+}
+
+#toc_container.no_bullets {
+  &.contracted {
+    width: 40% !important;
+  }
+}
+
+#toc_container p.toc_title {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+#toc_container p.toc_title + ul.toc_list {
+  border: 2px dashed #1db3ce !important;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 15px;
+  > li {
+    > ul {
+      border: none;
+      > a {
+        font-size: 12px;
+      }
+      > li {
+        > a {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+//wordpress テキストの装飾カラー 濃い黄色を薄く変更
+
+.background-color {
+  background-color: #fff593 !important;
+}
+
+.wp-block-table {
+  &.is-style-left {
+    margin-bottom: 0;
+    margin-top: 30px;
+    table {
+      tbody {
+        tr {
+          > th {
+            text-align: left !important;
+            @media (max-width: $devise_sp_max_width) {
+              display: block;
+              white-space: pre-wrap !important;
+              width: 170px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.wp-block-image figcaption {
+  text-align: center;
+}
+
+.wp-block-image {
+  margin: 0 0 1em;
+  @media (max-width: $devise_sp_max_width) {
+    margin: 0 0 1.5em;
+  }
+}
+
+// プラグイン liquid speech balloonの設定
+.liquid-speech-balloon-wrap {
+  margin-top: 2rem;
+}
+
+// ページネーション
+    .pagenation {
+      text-align: center;
+      .pagenatin-list {
+        font-size: 0;
+        letter-spacing: 0;
+        li {
+          display: inline-block;
+          position: relative;
+          text-align: center;
+          vertical-align: top;
+          width: 60px;
+          &::after {
+            background: #1db3ce;
+            content: "";
+            display: block;
+            height: 6px;
+            position: absolute;
+            right: 0;
+            top: 7px;
+            width: 1px;
+          }
+          &:first-of-type {
+            &::before {
+              background: #1db3ce;
+              content: "";
+              display: block;
+              height: 6px;
+              position: absolute;
+              left: 0;
+              top: 7px;
+              width: 1px;
+            }
+          }
+        }
+        span,
+        a {
+          display: inline-block;
+          font-size: 13px;
+          letter-spacing: 0.3px;
+          width: 100%;
+          @media (max-width: $devise_sp_max_width) {
+            font-size: vw(12);
+          }
+        }
+        span {
+          background: #1db3ce;
+          border-radius: 2px;
+          color: #fff;
+          display: inline-block;
+          height: 20px;
+          font-weight: bold;
+          position: relative;
+          vertical-align: middle;
+          width: 20px;
+        }
+        a {
+          color: #1db3ce;
+          position: relative;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+
+// 学校紹介バナー
+.school-banner-area {
+  margin-top: 30px;
+  > a {
+    cursor: pointer;
+    display: block;
+    height: 210px;
+    transition: 0.5s;
+    width: 100%;
+    @media (max-width: $devise_sp_max_width) {
+    height: vw(88);
+    }
+    > img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
