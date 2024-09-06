@@ -1,0 +1,209 @@
+//header
+#header {
+	background: #222222;
+	height: 100px;
+	max-width: 1920px;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	.header-main-box {
+		align-items: end;
+		box-sizing: border-box;
+		color: #fff;
+		display: flex;
+		font-family: adobe-garamond-pro, Verdana, Helvetica, Arial, sans-serif;
+		justify-content: space-between;
+		padding: 10px 20px;
+		width: 100%;
+		.header-logo-area {
+			width: 30%;
+			.description {
+				font-size: 12px;
+				font-weight: normal;
+				margin-bottom: 5px;
+			}
+			.header-logo {
+				font-size: 24px;
+				letter-spacing: 0.1em;
+			}
+		}
+		.header-select-box {
+			margin-left: 8%;
+			width: 50%;
+			.header-select-area {
+				display: flex;
+				width: 100%;
+				.header-select-list {
+					margin-right: 3%;
+					text-align: center;
+					width: 16%;
+					&:last-child {
+						margin-right: 0;
+					}
+					> a {
+						font-family: adobe-garamond-pro, Verdana, Helvetica, Arial, sans-serif;
+						font-size: 14px;
+						letter-spacing: 0.1em;
+					}
+				}
+			}
+		}
+		.header-tel {
+			align-items: center;
+			display: flex;
+			font-family: adobe-garamond-pro, Verdana, Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			justify-content: end;
+			letter-spacing: 0.1em;
+			width: 18%;
+			> a {
+				letter-spacing: 0.1em;
+				margin-left: 10px;
+			}
+		}
+	}
+	.news-area {
+		background-color: #fff;
+		border: 1px solid #333333;
+		box-sizing: border-box;
+		padding: 5px 20px;
+		width: 100%;
+		> a {
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			letter-spacing: 0.1em;
+			.news-date {
+				font-size: 12px;
+				margin-right: 15px;
+			}
+		}
+	}
+}
+
+
+//footer
+#footer {
+	margin-top: 120px;
+	.footer-main-area {
+		margin: 0 auto;
+		width: 100%;
+		.book-area {
+			background-color: #e3e3e3;
+			border-top: 1px solid #aaa;
+			border-bottom: 1px solid #aaa;
+			padding: 1.7em 0;
+			.book-list {
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+				margin: 0 auto;
+				max-width: 1200px;
+				.txt_tit {
+					font-family: adobe-garamond-pro, Verdana, Helvetica, Arial, sans-serif;
+					font-size: 30px;
+					width: 18%;
+				}
+				.txt_tel {
+					font-family: adobe-garamond-pro, Verdana, Helvetica, Arial, sans-serif;
+					letter-spacing: 0.1em;
+					text-align: center;
+					width: 25%;
+					> span {
+						font-size: 15px;
+						line-height: 26px;
+						margin-bottom: 10px;
+					}
+					> a {
+						display: block;
+						font-size: 27px;
+						letter-spacing: 0.1em;
+					}
+				}
+				.box_btn {
+					align-items: center;
+					display: flex;
+					text-align: center;
+					width: 50%;
+					.btn-area {
+						margin-right: 2%;
+						width: 33%;
+						&:last-child {
+							margin-right: 0;
+						}
+						> .btn-bg {
+							background-color: #333333;
+							box-sizing: border-box;
+							color: #fff;
+							padding: 15px;
+								&.border {
+									background: transparent;
+									border: 1px solid #333333;
+									color: #333333;
+							}
+						}
+					}
+				}
+			}
+		}
+		.footer-cotegory-area {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			margin: 0 auto;
+			margin-bottom: 80px;
+			margin-top: 80px;
+			max-width: 1200px;
+			width: 100%;
+			.address-area {
+				width: 45%;
+				.img-logo {
+					> a {
+						font-family: adobe-garamond-pro, "Times New Roman", Times, Garamond, Georgia, serif;
+						font-size: 27px;
+						letter-spacing: 0.1em;
+					}
+				}
+				.address-detail {
+					letter-spacing: 0.08em;
+					line-height: 2.3;
+					margin-top: 2em;
+					> p {
+						font-size: 12px;
+					}
+				}
+			}
+			.link-list {
+				display: flex;
+				font-size: 14px;
+				line-height: 2.3;
+				width: 52.5%;
+				> dl {
+					width: 50%;
+					> dt {
+						> a {
+							font-size: 15px;
+							margin-bottom: 5px;
+						}
+					}
+					> dd {
+						margin-bottom: 5px;
+						margin-left: 1em;
+					}
+				}
+				> ul {
+					width: 25%;
+					> li {
+						margin-top: 5px;
+					}
+				}
+			}
+		}
+	}
+	#copyright {
+		font-family: adobe-garamond-pro, "Times New Roman", Times, Garamond, Georgia, serif;
+		margin: 0.5em auto;
+		text-align: center;
+	}
+}

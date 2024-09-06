@@ -1,0 +1,116 @@
+#page-top {
+	//トップスライド部分
+	section.top-main-area {
+		height: 75vh;
+		width: 100%;
+		.top-title-box {
+			bottom: 15%;
+			color: #fff;
+			font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", YuMincho, "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", Times, Garamond, Georgia, serif;
+			left: 3.5%;
+			position: absolute;
+			z-index: 5;
+			.main-title {
+				display: inline;
+				font-size: 50px;
+				line-height: 42px;
+				text-shadow: 1px 1px 10px #333333, -1px -1px 10px #333333;
+				white-space: nowrap;
+			}
+			.sub-title {
+				color: #6badde;
+				font-size: 30px;
+				letter-spacing: 0.2em;
+				line-height: 1.6;
+				position: relative;
+				text-shadow: 1px 1px 10px #333333, -1px -1px 10px #333333;
+				white-space: nowrap;
+			}
+			.top-access-detail {
+				background: #6badde;
+				letter-spacing: 0.1em;
+				line-height: 32px;
+				margin: 1em auto 0;
+				text-align: center;
+			}
+		}
+		.swiper {
+			height: 75vh;
+			margin-right: 0;
+			margin-top: 20px;
+			position: relative;
+			width: 80%;
+		}
+	}
+
+	//コンセプト部分
+	section.top-concept-area {
+		.concept-main-box {
+			position: relative;
+			&::before {
+				background-image: url(/assets/img/common/bg_dummy.jpeg);
+				background-size: contain;
+				background-position: left top;
+				background-repeat: repeat-y;
+				content: '';
+				display: inline-block;
+				height: 5%;
+				left: 0;
+				padding-top: 20%;
+				position: absolute;
+				top: 0;
+				width: 20%;
+				z-index: -1;
+			}
+			.concept-title {
+				align-items: center;
+				bottom: 0;
+				display: flex;
+				-webkit-box-align: center;
+				font-family: adobe-garamond-pro, "Times New Roman", Times, Garamond, Georgia, serif;
+				letter-spacing: 0.04em;
+				position: absolute;
+				right: 0;
+				top: 8%;
+				transform: rotate(90deg);
+				width: 18%;
+				&::before {
+					border-top: 1px solid;
+					content: "";
+					flex-grow: 1;
+					margin-right: 1.5rem;
+					-webkit-box-flex: 1;
+					-ms-flex-positive: 1;
+					width: 3.5em;
+				}
+			}
+			.concept-main-area {
+				align-items: center;
+				box-sizing: border-box;
+				display: flex;
+				margin: 0 auto;
+				max-width: 1200px;
+				padding-top: 120px;
+				position: relative;
+				width: 100%;
+				.concept-left-box {
+					margin-right: 10%;
+					width: 50%;
+				}
+				.concept-right-box {
+					width: 40%;
+					> h3 {
+						font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", YuMincho, "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", Times, Garamond, Georgia, serif;
+						line-height: 1.6;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	//客室部分
+	section.top-rooms-area {
+		height: 75vh;
+	}
+}

@@ -1,0 +1,133 @@
+/*************** common 共通クラス ***************/
+$devise_pc_min_width: 1024px;
+$devise_tb_max_width: 1023px;
+$devise_tb_min_width: 768px;
+$devise_sp_max_width: 767px;
+$devise_ssp_max_width: 320px;
+
+@media (max-width: $devise_tb_max_width) {
+  .pc-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (min-width: $devise_pc_min_width) {
+  .tb-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (max-width: $devise_sp_max_width) {
+  .tb-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (max-width: $devise_sp_max_width) {
+  .pc-tb-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (min-width: $devise_pc_min_width) {
+  .tb-sp-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (min-width: $devise_tb_min_width) {
+  .sp-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media (min-width: 321px) {
+  .ssp-visibility {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+
+@function vw($pixel) {
+  @return (($pixel/375) * 100) + vw;
+}
+
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  color: #333333;
+  font-size: 16px;
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo,
+    メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 28px;
+  margin: 0 auto;
+  max-width: 2000px;
+  @media (max-width: $devise_sp_max_width) {
+    font-size: vw(14);
+    width: 100%;
+  }
+}
+
+a {
+  color: inherit;
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+  text-decoration: inherit;
+  transition: 0.5s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+img {
+  height: 100%;
+  vertical-align: top;
+  width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  letter-spacing: 0.1em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+
+ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
